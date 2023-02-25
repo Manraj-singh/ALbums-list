@@ -1,11 +1,11 @@
 import { API_URLS } from "../utils/constants";
 
+// ?Below is a customfetch function we created to fetch api so that we wont have to write the repetitive code for all fetch requests(GET,POST ,etc)
 const customFetch = async (url, { body, ...customConfig }) => {
   //we are defining headers below
   const headers = {
     "content-type": "application/x-www-form-urlencoded",
   };
-
   //creating a assimilation of config with what we get as argument and what we defined in headers
   const config = {
     ...customConfig,
@@ -18,10 +18,7 @@ const customFetch = async (url, { body, ...customConfig }) => {
   try {
     //here we are making a simple api call and converting it to json
     const response = await fetch(url, config);
-    // console.log("api try res", response);
     const data = await response.json();
-
-    // console.log("data", data);
 
     // if status of the fetch is a success, then returning the data
     if (data) {
@@ -34,7 +31,6 @@ const customFetch = async (url, { body, ...customConfig }) => {
     //else throw the error
     throw new Error(data.message);
   } catch (error) {
-    // console.error("error",error);
     return {
       message: "error in api ",
       success: false,
@@ -42,12 +38,27 @@ const customFetch = async (url, { body, ...customConfig }) => {
   }
 };
 
+//?BELOW ARE OUR API CALLS
+//for getting all albums
 export const getAllAlbums = () => {
   return customFetch(API_URLS.getAllAlbums(), {
     method: "GET",
   });
 };
 
+//for creating new album
+export const createAlbum = (userId, id, title) => {
+  return customFetch(API_URLS.createAlbum(userId, id, title), {
+    method: "POST",
+    body: {
+      userId,
+      id,
+      title,
+    },
+  });
+};
+
+//for editing a album
 export const editAlbum = (id, title, userid) => {
   return customFetch(API_URLS.updateAlbum(id), {
     method: "PUT",
@@ -58,14 +69,9 @@ export const editAlbum = (id, title, userid) => {
     }),
   });
 };
+//for deleting a album
 export const removeAlbum = (id) => {
   return customFetch(API_URLS.deleteAlbum(id), {
     method: "DELETE",
   });
 };
-// export const register = async (name, email, password, confirmPassword) => {
-//   return customFetch(API_URLS.signup(), {
-//     method: "POST",
-//     body: { name, email, password, confirm_password: confirmPassword },
-//   });
-// };

@@ -4,17 +4,18 @@ import Loader from "./Loader";
 import Navbar from "./Navbar";
 
 function App() {
+  //getting the context
   const albums = useAlbums();
+
   if (albums.loading) {
     return <Loader />;
   }
   return (
     <>
       <Navbar />
-      {console.log("app rendered")}
       <ul className="tilesWrap">
-        {albums.data.map((alb) => {
-          return <Album data={alb} key={alb.id} />;
+        {albums.data.map((alb, index) => {
+          return <Album data={alb} key={index} />;
         })}
       </ul>
     </>

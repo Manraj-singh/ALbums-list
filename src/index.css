@@ -23,12 +23,35 @@ input {
 /* --NAVBAR STYLES STARTS-- */
 
 .navbar {
-  background-color: rgba(255, 255, 255, 0.02);
-  height: 30px;
+  background-color: black;
+  opacity: 0.8;
+  height: 60px;
   top: 0;
   position: sticky;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  z-index: 22;
+}
+.navbar h2 {
+  margin: 0;
+  padding: 0;
+  margin-right: 35px;
+}
+.navbar input {
+  height: 20px;
+  margin-right: 15px;
+}
+.navbar button {
+  background: transparent;
+  border: 1px solid #b7b7b7;
+  padding: 3px 8px;
+  color: #b7b7b7;
+  border-radius: 3px;
 }
 /* --NAVBAR STYLES END-- */
+
 /* --LOADER STYLES STARTS-- */
 .loader {
   position: absolute;
@@ -121,28 +144,12 @@ input {
   cursor: pointer;
   overflow: hidden;
 }
-/* .buttons button:before {
-  content: "";
-  position: absolute;
-  height: 100%;
-  width: 120%;
-  background: #b7b7b7;
-  top: 0;
-  opacity: 0;
-  left: -140px;
-  border-radius: 0 20px 20px 0;
-  z-index: -1;
-  transition: all 0.3s ease-in-out;
-} */
+
 .albumLi:hover button {
   transform: translateY(5px);
   opacity: 1;
 }
 
-/* .buttons button:hover:before {
-  left: 0;
-  opacity: 1;
-} */
 .albumLi:hover h2 {
   top: 0px;
   opacity: 0.6;
