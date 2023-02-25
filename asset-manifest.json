@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/ALbums-list/static/css/main.dac4b4eb.css",
+    "main.js": "/ALbums-list/static/js/main.14f29f0a.js",
+    "index.html": "/ALbums-list/index.html",
+    "main.dac4b4eb.css.map": "/ALbums-list/static/css/main.dac4b4eb.css.map",
+    "main.14f29f0a.js.map": "/ALbums-list/static/js/main.14f29f0a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dac4b4eb.css",
+    "static/js/main.14f29f0a.js"
+  ]
+}
