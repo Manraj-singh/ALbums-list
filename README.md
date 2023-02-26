@@ -1,5 +1,5 @@
 
-# MovieSearch-OMDB
+# Albums list using React.js
 **Deployed on :**  https://manraj-singh.github.io/ALbums-list/
 
 **Overview :** A React app for rendering and performing CRUD on jsonplaceholder's album resource.
